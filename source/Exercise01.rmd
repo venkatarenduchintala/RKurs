@@ -1,0 +1,30 @@
+---
+title: "RKurs - Exercise01"
+author: "Venkat"
+date: "2 Mai 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+## Vectors
+What is the output of the following commands? Try to predict the solutions before you type
+in the commands. We define:
+x <- c(5, 2, 1, 4); xx <- c(1, 10, 15, 18); y <- rep(1, 5)
+z <- c(TRUE, FALSE, TRUE, TRUE); w <- c("Marie", "Betty", "Peter")
+```{r creation of vectors, echo=TRUE}
+x <- c(5, 2, 1, 4); 
+xx <- c(1, 10, 15, 18); 
+y <- rep(1, 5);
+
+z <- c(TRUE, FALSE, TRUE, TRUE);
+w <- c("Marie", "Betty", "Peter")
+```
