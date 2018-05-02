@@ -1,3 +1,5 @@
+#Day 01 - 02.05.2018
+
 2+2
 3*3
 x<-3
@@ -78,3 +80,88 @@ str(df)
 #create numeric vectors
 ?rep #rep replicates the values in x.
 ?seq 
+
+#Import Data using script
+
+setwd(dir = "c:/dev/RKurs/")
+getwd()
+d.sport <- read.csv(file = "./data/sport.csv", header = TRUE, row.names = "X")
+View(d.sport)
+
+head(d.sport, 10)
+tail(d.sport)
+
+
+#Importing data using URL
+url <- 'http://stat.ethz.ch/Teaching/Datasets/WBL/sport.dat'
+d.sport <- read.table(url, header = TRUE)
+str(d.sport)
+
+
+#Writing Data
+getwd()
+write.table(d.sport, file = "./data/sport.txt", sep = ",")
+
+
+#Indexing
+kugel <- d.sport$kugel
+kugel[3]
+kugel[c(2,4,7)]
+kugel[-2]
+kugel[-c(2,4,7)]
+kugel[kugel > 15]
+kugel[] > 15
+summary (kugel)
+
+d.sport
+participants <- row.names(d.sport)
+participants[4]
+
+
+#extract data from a dataframe
+d.sport[2,3]
+d.sport[2,]
+d.sport[,3]
+d.sport[-2,] #removes the second row
+
+d.sport['FRITZ',] #prints all values for FRITZ row
+
+d.sport[c('FRITZ', 'NOOL'), ] #all columns of FRITZ and NOOL
+d.sport[, c('kugel', 'speer')]
+
+d.sport[, -c('kugel', 'speer')] #Error - characters and minus sign will not work
+
+d.sport[, -c(2,6)]
+
+d.sport[d.sport$kugel >15, ]
+
+
+#Quick quiz
+d.sport[,]
+d.sport[1:10, ]
+d.sport[-c(1,3,7)]
+d.sport[, 2:3]
+
+
+#functions in R
+mean(d.sport$kugel)
+dim(d.sport)
+nrow(d.sport)
+ncol(d.sport)
+str(d.sport)
+
+?mean
+mean(d.sport$kugel)
+mean()
+mean(x=d.sport$kugel, trim = 0.1, na.rm = TRUE)
+mean(trim=0.1, x=d.sport$kugel, na.rm=TRUE)
+mean(0.1, d.sport$kugel, TRUE)
+mean(d.sport$kugel, TRUE, trim=0.1)
+mean(d.sport$kugel, TRUE, trim=0.1)
+
+?quantile
+quantile(x=d.sport$kugel, probs=c(0.1, 0.9))
+
+#Installing packages
+install.packages('MASS')
+require('MASS')

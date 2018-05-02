@@ -1,5 +1,5 @@
 ---
-title: "RKurs - Exercise01"
+title: "RKurs - Exercise01.pdf"
 author: "Venkat"
 date: "2 Mai 2018"
 output: html_document
@@ -15,7 +15,7 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-## Vectors
+## Problem 1 -  Vectors
 What is the output of the following commands? Try to predict the solutions before you type
 in the commands. We define:
 x <- c(5, 2, 1, 4); xx <- c(1, 10, 15, 18); y <- rep(1, 5)
@@ -26,5 +26,60 @@ xx <- c(1, 10, 15, 18);
 y <- rep(1, 5);
 
 z <- c(TRUE, FALSE, TRUE, TRUE);
-w <- c("Marie", "Betty", "Peter")
+w <- c("Marie", "Betty", "Peter");
+
+```
+# Vectors - a) Basic commands with vectors
+```{r basic vector operations}
+sum(x);
+range(x);
+length(y);
+sum(y)
+
+```
+
+# Vectors - b) c(x, y, 13)
+```{r print the character vectors}
+print(c(x,y,z))
+c(x,y,z)
+```
+
+#Vectors - c) xx - x
+c(x, 12) * y
+1:6 + 1
+1:9 + 1:2
+```{r}
+xx-x
+c(x, 12) * y
+1:6 + 1
+1:9 + 1:2 #will give an error - non-multiple length arrays. 
+```
+
+#Vectors - 
+d) x <= 2
+x <= 2 & z
+```{r comparison of vectors}
+print (x);
+print (z);
+x <= 2;
+x <= 2 & z
+```
+
+#Vectors - e)
+substring(w, 2, 4)
+paste(substring(w, 1, 2), substring(w, 5, 5), sep = "...")
+```{r vector substring operations}
+print(w);
+substring(w, 2, 4);
+paste(substring(w, 1, 2), substring(w, 5, 5), sep = "...")
+```
+
+#Vectors - f)
+cbind(x, xx) #column bind 
+cbind(2, 6:1, rep(c(3, 1, 4), 2), seq(1.1, 1.6, by = 0.1))
+```{r Combine R objects by Rows and columns}
+print(x);
+print(xx);
+cbind(x, xx); #column bind 
+cbind(2, 6:1, rep(c(3, 1, 4), 2), seq(1.1, 1.6, by = 0.1))
 ```
