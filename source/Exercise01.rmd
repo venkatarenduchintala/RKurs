@@ -1,6 +1,6 @@
 ---
 title: "RKurs - Exercise01.pdf"
-author: "Venkata Subramani Renduchintala"
+author: "Venkata Subramani Renduchintala" 
 date: "2 Mai 2018"
 output: html_document
 ---
