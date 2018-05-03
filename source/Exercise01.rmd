@@ -1,6 +1,6 @@
 ---
 title: "RKurs - Exercise01.pdf"
-author: "Venkat"
+author: "Venkata Subramani Renduchintala"
 date: "2 Mai 2018"
 output: html_document
 ---
@@ -11,7 +11,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
@@ -116,3 +115,53 @@ rep(1:5, times=c(1:5))
 ```{r repeat odd numbers twice}
 rep(seq(from=1, to=11, by=2), each=2)
 ```
+
+
+##Problem 3 - Matrices and data frames
+#a) Generate the following matrices.
+#    [,1] [,2] [,3] [,4]
+#[1,] 1 101 201 301
+#[2,] 2 102 202 302
+#[3,] 3 103 203 303
+#[4,] 4 104 204 304
+#[5,] 5 105 205 305
+
+# [,1] [,2] [,3]
+# [1,] 5 0 0
+# [2,] 0 5 0
+# [3,] 0 0 5
+```{r Generation of matrices}
+
+m0 <- matrix(c(1:5, 101:105, 201:205, 301:305), nrow = 5, ncol = 4, byrow = FALSE)
+m1 <- diag(x = 5, nrow = 3, ncol = 3)
+print(m0)
+print(m1)
+```
+
+#Matrices and data frames 
+#b) Define following data frame:
+# Namen Age Blind
+# 1 Bob 27 TRUE
+# 2 Alice 34 FALSE
+# 3 Kim 21 FALSE
+# 4 Julia 25 TRUE
+# 5 Robert 29 TRUE
+```{r data frame definition}
+df0 <- data.frame(Namen = c("Bob", "Alice", "Kim", "Julia", "Robert"), 
+                  Age=c(27, 34, 21, 25, 29),
+                  Blind=c(TRUE, FALSE, FALSE, TRUE, TRUE))
+print(df0)
+
+```
+
+#Matrices and data frames - c)
+c) Explore the properties of your generated objects. Which class of R-objects do they belong to? How are they structured?
+Hint: Use the functions class(), dim(), str(), summary().
+```{r Properties of generated objects}
+class(m0) #give typee of object
+dim(m0) #dimension of an object
+str(m0) #Structure
+summary(m0) #summary per column
+
+```
+
