@@ -100,3 +100,4 @@ t.test(Sepal.Length~Species, data = testdata)
 #If normalisty is not given - we have the Wilcoxon rank test
 boxplot(Sepal.Length ~Species, data = testdata)
 wilcox.test(Sepal.Length ~Species, data = testdata)
+
