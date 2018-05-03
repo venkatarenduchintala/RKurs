@@ -165,3 +165,6 @@ quantile(x=d.sport$kugel, probs=c(0.1, 0.9))
 #Installing packages
 install.packages('MASS')
 require('MASS')
+
+
+
