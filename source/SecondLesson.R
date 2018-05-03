@@ -48,3 +48,55 @@ pairs(iris)
 getwd()
 setwd('./data')
 png(filename='my_plot.png', width = 500, height = 500)
+pair(iris[, -5])
+dev.off()
+
+
+#Hypothesis Testing 
+##Hypothesis - Tests Approach
+# Step 1 Declare model by which data were generate (e.g. population is normally distributed, large sample size and (signma) not known)
+
+#Step 2 Define null hypothesis H0* and alternative hypothesis HA**
+#           *   The statement being tested in a test of [statistical] significance. Test the strength of the evidence against the null hypothesis.
+#           **  The statement that is hoped or expected to be true instead of the null hypothesis.
+
+#Step 3 Choose the level of significance (alpha)
+
+#Step 4: Determine critical values for the level of significance (alpha) and degrees of freedom df = (n - 1)
+
+#Step 5: Defne and calculate test statistic, e.g. one-sample test t= (xbar - mu0)/(sx / sqrt(n))
+
+#Step 6: Compare the test statistic to the critical values and make decision: reject or fail to reject H0
+
+
+
+#Hypothesis
+testdata <- iris[iris$Species != "setosa", c("Sepal.Length", "Species")]
+str(testdata)
+testdata$Species <- droplevels(testdata$Species)
+str(testdata)
+
+#T-Test
+hist(testdata[testdata$Species == "virginica", "Sepal.Length"], breaks = 20)
+
+
+#Do we have equal variance --- we can find out with boxplot
+boxplot(Sepal.Length~ Species, data = testdata)
+
+
+#Q-Q plot
+qqnorm(testdata[testdata$Species == "virginica", "Sepal.Length"])
+#to show a linear relationship - qqline
+qqline(testdata[testdata$Species == "virginica", "Sepal.Length"])
+
+qqnorm(testdata[testdata$Species != "virginica", "Sepal.Length"])
+#to show a linear relationship - qqline
+qqline(testdata[testdata$Species != "virginica", "Sepal.Length"])
+
+
+t.test(Sepal.Length~Species, data = testdata)
+
+
+#If normalisty is not given - we have the Wilcoxon rank test
+boxplot(Sepal.Length ~Species, data = testdata)
+wilcox.test(Sepal.Length ~Species, data = testdata)
